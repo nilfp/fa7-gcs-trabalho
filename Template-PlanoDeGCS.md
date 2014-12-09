@@ -1,4 +1,4 @@
-<Nome do Projeto>
+<SCV - Sistema de Controle de Veículos>
 =================
 Plano de Gerenciamento de Configuração
 ======================================
@@ -14,7 +14,7 @@ Histórico de Versões
 
 |Data                |Versão       |Descrição               |Autor          |
 |--------------------|-------------|------------------------|---------------|
-|_&lt;dd/mm/aaaa&gt;_|_&lt;1.0&gt;_|_&lt;Versão inicial&gt;_|_&lt;autor&gt;_|
+|_&lt;09/12/2014&gt;_|_&lt;1.0&gt;_|_&lt;Versão inicial - Definição do Plano GCS&gt;_|_&lt;Nelson Rodrigues&gt;_|
 |_&lt;dd/mm/aaaa&gt;_|_&lt;1.1&gt;_|_&lt;Outra versão&gt;_  |_&lt;autor&gt;_|
 
 
@@ -22,48 +22,56 @@ Histórico de Versões
 1. Introdução
 ==============
 
-_[A introdução do Plano de Gerenciamento de Configuração  oferece uma visão geral de todo o documento. 
-Ela inclui a finalidade, o escopo, as definições, os acrônimos, as abreviações, as referências e uma visão geral deste
-Plano de Gerenciamento de Configuração.]_
+O Pleno de Gerenciamento de Configuração descreve todas as atividades do Gerenciamento de Controle de Configuração e Mudança que serão executadas durante o ciclo de vida do produto. Suas atividades envolvem identificar a configuração do software, manter sua integridade durante o projeto e controlar sistematicamente as mudanças.
 
 1.1 Finalidade
 ---------------
-_[Especifique a finalidade deste Plano de Gerenciamento de Configuração.]_
+Sua finalidade é criar um padrão a ser seguido por todos os membros da equipe para garantir o maior controle do produto no andamento do projeto.
 
 1.2 Escopo
 ----------
-_[Uma breve descrição do escopo deste Plano de Gerenciamento de Configuração; o modelo ao qual ele está associado e tudo o que é afetado ou influenciado por este documento.]_
+Este Plano de Gerenciamento de Configuração destina-se a todos os membros da equipe responsáveis pelo desenvolvimento do sistema SCV e tem abrangência em todo o controle e gerenciamento da configuração do projeto.
 
 1.3 Definições, Acrônimos e Abreviações
 ---------------------------------------
-_[Esta subseção apresenta as definições de todos os termos, acrônimos e abreviações necessários para a correta interpretação do Plano de Gerenciamento de Configuração.  Essas informações podem ser fornecidas mediante referência ao Glossário do projeto.]_
+GC - Gerência de Configuração.
+CCM - Comitê para o Controle de Mudanças.
+GV - Gerência de Veículos
+Baseline - Conjunto de itens de configuração que conseguiram um estado comprovado de estabilidade.
+PGC - Plano de Gerência de Configuração.
 
 1.4 Referências
 ---------------
-_[Esta subseção apresenta uma lista completa de todos os documentos mencionados no Plano de Gerenciamento de Configuração. Identifique os documentos por título, número de relatório (se aplicável), data e organização responsável pela publicação. Especifique as fontes a partir das quais as referências podem ser obtidas. Essas informações podem ser fornecidas por um anexo ou outro documento.]_
+- Template de Plano de Gerência de Configuração, Template-PlanoDeGCS.md
+- CMMI for Development, Version 1.3
 
 1.5 Visão Geral
 ---------------
-_[Esta subseção descreve o conteúdo restante do Plano de Gerenciamento de Configuração e explica como o documento está organizado.]_
 
-
+&lt;Seção 2&gt; - São relacionados os papéis, as responsabilidades das atividades e as ferramentas dentro da GC. -
+&lt;Seção 3&gt; - Descreve as identificações configuração, métodos, itens de configuração, baselines, estrutura do repositório e controle de mudanças. -
+&lt;Seção 4&gt; - Descreve os padrões e procedimentos que deverão ser adotados e seguidos pela equipe. -
+&lt;Seção 5&gt; - Descreve as ferramentas de software, o pessoal e o treinamento necessários para implementar as atividades de CM especificadas. -
+&lt;Seção 6&gt; - Descreve as auditorias de configuração, os problemas encontrados e acompanhamento das correções.-
 
 2. Gerenciamento de Configuração de Software
 ============================================
 
 2.1 Organização, Responsabilidades e Interfaces
 ------------------------------------------------
-_[Descreva quem será o responsável pela execução das diversas atividades de Gerenciamento de Configuração (CM) descritas no Processo de CM.]_
 
+|Papéis |Equipe |Responsabilidades|
+|-------|-------|-----------------|
+|Gerente de Configuração|Nelson Rodrigues|Estabelecer Politicas de GC / Escrever Plano de GC / Configurar Ambiente de GC / Criar Espaços de Trabalho de Integração / Criar Baselines / Promover Baselines |
+|CCM|Nelson Rodrigues / Nilderlan Fernandes|Estabelecer Processo de Controle de Mudanças / Revisar Solicitação de Mudança|
+|Desenvolvedor|Nelson Rodrigues / Nilderlan Fernandes|Segui os padrões e procedimentos definidos no PGC|
+
+ 
+ 
 2.2 Ferramentas, Ambiente e Infra-estrutura
 -------------------------------------------
-_[Descreva o ambiente de computação e as ferramentas de software a serem utilizadas para desempenhar as funções de CM em todo o ciclo de vida do projeto ou produto._
-_Descreva as ferramentas e os procedimentos necessários utilizados para o controle de versão dos itens de configuração gerados no ciclo de vida do projeto ou produto._
-_As questões envolvidas na configuração do ambiente de CM incluem:_
-* _tamanho previsto dos dados do produto_
-* _distribuição da equipe do produto_
-* _localização física dos servidores e clientes]_
- 
+
+GIT - Controle de Versão - Sistema de controle de versão
 
 
 3. O Programa de Gerenciamento de Configuração
@@ -98,11 +106,23 @@ _[Descreva a organização de diretórios do seu repositório e que itens/arquiv
 --------------------------------------
 
 ### 3.2.1 Processamento e Aprovação de Solicitações de Mudança
-_[Descreva o processo pelo qual os problemas e as mudanças são submetidos, revisados e dispostos. Inclua como funciona a transição de estados de uma solicitação de mudança]_
+
+As solicitações de mudanças são enviadas para o CCB, inicia uma analise, caso essa analise de mudança seja validada é dado inicio a execução da mudança, finalizando com o desenvolvimento, passa para fase de teste, os testes são analisados novamente e caso ocorra tudo certo a mudança é finalizada.
+
+Status de Mudança.
+Aberto - Criação da Solicitação
+Em Analise - Analise da solicitação
+Analisado - Aguardando Desenvolvimento
+Em Desenvolvimento - Solicitação sendo desenvolvida
+Desenvolvido - Aguardando Teste
+Em testes - Solicitação em teste
+Testado com erro - Aguardando Desenvolvimento
+Testado sem erro - Solicitação esperando finalização
+Finalizado - Solicitação finalizada.
 
 ### 3.2.2 Comitê de Controle de Mudança (CCB)
-_[Descreva a participação e os procedimentos para processar solicitações e aprovações de mudança a serem seguidos pelo CCB. Informe quem são os membros do CCB e suas responsabilidades.]_
 
+Fazem parte do CCB: Gerente de Projeto, Analista de Sistemas e Analista de Testes.
 
 
 4. Padrões e Procedimentos
@@ -113,7 +133,9 @@ _[Descreva os padrões e procedimentos que devem ser seguidos no projeto. Crie s
 
 5. Treinamento e Recursos
 =========================
-_[Descreva as ferramentas de software, o pessoal e o treinamento necessários para implementar as atividades de CM especificadas.]_
+| Treinamento | Objetivo | Público Alvo |
+|---------------|------------------------|------------------------|
+|Repositório | Trinemento ensina como acessar o repositório através de uma máquina cliente, como dar os comandos mais importantes do repositório e como fazer a inclusao de novos itens.| Toda a equipe |
 
 
 
