@@ -2,27 +2,23 @@
 =================
 Plano de Gerenciamento de Configuração
 ======================================
-Versão &lt;1.0&gt;
+Versão &lt;1.1&gt;
 ------------------
-
-_[Observação: O template a seguir é fornecido para uso com o Rational Unified Process (RUP).  O texto exibido entre colchetes e em itálico foi incluído para orientar o autor e deve ser excluído antes da publicação do documento._
-
-_Este documento utiliza a formatação da linguagem [Markdown] (http://daringfireball.net/projects/markdown/). Você pode encontrar um guia de referência rápido [aqui] (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).]_
 
 Histórico de Versões
 --------------------
 
 |Data                |Versão       |Descrição               |Autor          |
 |--------------------|-------------|------------------------|---------------|
-|_&lt;09/12/2014&gt;_|_&lt;1.0&gt;_|_&lt;Versão inicial - Definição do Plano GCS&gt;_|_&lt;Nelson Rodrigues&gt;_|
-|_&lt;dd/mm/aaaa&gt;_|_&lt;1.1&gt;_|_&lt;Outra versão&gt;_  |_&lt;autor&gt;_|
+|&lt;09/12/2014&gt;|&lt;1.0&gt;|&lt;Versão inicial - Definição do Plano GCS&gt;|&lt;Nelson Rodrigues&gt;|
+|&lt;10/12/2014&gt;|&lt;1.1&gt;|&lt;Versão para Homologação&gt;|&lt;Nilderlan Fernandes Pereira&gt;|
 
 
 
 1. Introdução
 ==============
 
-O Pleno de Gerenciamento de Configuração descreve todas as atividades do Gerenciamento de Controle de Configuração e Mudança que serão executadas durante o ciclo de vida do produto. Suas atividades envolvem identificar a configuração do software, manter sua integridade durante o projeto e controlar sistematicamente as mudanças.
+O Plano de Gerenciamento de Configuração descreve todas as atividades do Gerenciamento de Controle de Configuração e Mudança que serão executadas durante o ciclo de vida do produto. Suas atividades envolvem identificar a configuração do software, manter sua integridade durante o projeto e controlar sistematicamente as mudanças.
 
 1.1 Finalidade
 ---------------
@@ -81,26 +77,23 @@ GIT - Controle de Versão - Sistema de controle de versão
 ---------------------------------
 ### 3.1.1 Métodos de Identificação
 ----------------------------------
-_[Descreva como os artefatos do projeto ou produto devem ser nomeados, marcados e numerados. O esquema de identificação deve abranger o hardware, o software do sistema, os produtos de terceiros (COTS) e todos os artefatos de desenvolvimento de aplicativos listados na estrutura de diretórios do produto; por exemplo, planos, modelos, componentes, software de teste, resultados e dados, executáveis e assim por diante.]_
+Cada artefato deve ser nomeado com uma pequena sigla no inicio: H para hardware; SS para software do sistema; TP para produtos de terceiros; e AD para arterfatos de desenvolvimento. Seguido de um hífen e seu nome sem abreviações em caixa alta, logo em seguida deve ser declarado o número da versão do artefato levando em consideração o padrão XX.YY, onde XX significa que é uma versão aprovada e que está em produção e YY é uma versão alterada de XX, da qual ainda não foi aprovada, e sempre que for, incrementar 1 em XX.
 
 ### 3.1.2 Itens de Configuração
-_[Relacionar os artefatos ou grupos de artefatos, separando por tipo, modulo ou subsistema, responsável ou momento em que deverão ser incluídos em baselines._
-* _“Inclusão em Baseline” em branco significa que o grupo de artefatos não participará de baseline. Pode ser expresso como uma data ou identificador de uma baseline, fase ou ponto de controle_
-* _“Responsável”: indicar nominalmente, sempre que possível]_
-
 | Item (ou Tipo de Item)                 | Responsável na equipe	     | Inclusão em Baseline |
 |----------------------------------------|-----------------------------|----------------------|
-|_&lt;grupo de itens de configuração&gt;_|_&lt;nome do responsável&gt;_|_&lt;momento a partir do qual o conjunto de artefatos será incluído em baseline&gt;_|
+|&lt;Plano de Gerenciamento de Configuração&gt;|&lt;Nelson Rodrigues&gt;|&lt;11/12/2014&gt;|
+|&lt;Código Fonte&gt;|&lt;Nilderlan Fernandes Pereira&gt;|&lt;11/12/2014&gt;|
 
 
 ### 3.1.3 Baselines do Projeto
 
-_[As baselines funcionam como um padrão oficial no qual os trabalhos subseqüentes são baseados. Somente mudanças autorizadas podem ser efetuadas nas baselines._
-_Descreva em que pontos do ciclo de vida do projeto ou produto as baselines devem ser estabelecidas. As baselines mais comuns devem ser definidas ao final de cada uma das fases de Iniciação, Elaboração, Construção e Transição. Elas também podem ser geradas no final de iterações ocorridas dentro das várias fases ou com freqüência ainda maior._
-_Descreva quem autoriza uma baseline e o que ela contém.]_
+Plano de Gerenciamento de Configurações: estabelecido na Elaboração do projeto, com o inituito de definir como será gerenciado o projeto. Autorizada por Nelson Rodrigues, contendo os padrões a serem seguidos e os planos de gerenciamento.
 
 ### 3.1.4 Estrutura do Repositório de Versões
-_[Descreva a organização de diretórios do seu repositório e que itens/arquivos devem ser armazenados em cada diretório.]_
+
+O projeto terá um repositório raiz com um repositório filho para Documentação. Dentro desse haverá uma pasta para cada tipo de documento, onde ficarão os documentos e suas devidas versões. 
+Cada release nova do projeto deve conter uma pasta dentro de uma pasta raiz Releases que fica dentro da pasta raiz do projeto. Dentro delas virão suas atividades e dentro dessa vem três subsequentes: trunk, tags, branches
 
 3.2 Controle de Configuração e Mudança
 --------------------------------------
@@ -127,7 +120,7 @@ Fazem parte do CCB: Gerente de Projeto, Analista de Sistemas e Analista de Teste
 
 4. Padrões e Procedimentos
 ==========================
-_[Descreva os padrões e procedimentos que devem ser seguidos no projeto. Crie subseções se achar necessário, para organizá-los melhor.]_
+Deve se seguir um padrão de nomenclatura, como foi citado. A criação de repositórios deve ser levada em consideração com extrema cautela. Qualquer mudança deve ser encaminhada ao CCB. E as auditorias serão feitas ao fim de cada release a fim de verificar se há problemas e acompanhar suas resoluções.
 
 
 
@@ -141,4 +134,4 @@ _[Descreva os padrões e procedimentos que devem ser seguidos no projeto. Crie s
 
 6. Auditorias de Configuração
 =============================
-_[Descreva o cronograma das auditorias de configuração e o que será verificado. Informe também como serão reportados os problemas encontrados e onde sera feito o acompanhamento dos itens corretivos.]_
+A auditoria será feita ao fim de cada release, verificando se o que foi feito está seguindo os padrões definidos. Caso hajam problemas, eles serão documentados e colocados em um kanban virtual que permitirá o acompanhamento em tempo real.
